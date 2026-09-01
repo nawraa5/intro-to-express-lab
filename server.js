@@ -10,11 +10,11 @@ app.use(express.static('public'));
 
 
 app.get('/test',(request,response)=>{
-    response.send('<p>Success!<p>')
+    response.send('<p>Success!</p>')
 
 })
 
-app.listen(3000)
+
 
 
 app.get('/',(request,response)=>{
@@ -23,9 +23,14 @@ app.get('/',(request,response)=>{
 
 
 app.get('/about',(request,response)=>{
-    response.send('<p>I am cybersecuirty student')
+    response.sendFile(__dirname + '/views/about.html')
 
 })
 
+
+
+app.listen(3000, ()=>{
+    console.log('server running on port 3000')
+})
 
 
